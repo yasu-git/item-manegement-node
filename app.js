@@ -2,6 +2,7 @@
 //expressを使うためのコード
 const express = require('express');
 const app = express();
+//mariaDBを操作するutil
 const DBUtil = require('./utils/DBUtil');
 //publicフォルダーにアクセス
 //cssやimgなどを置く場所

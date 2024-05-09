@@ -14,7 +14,7 @@ npm install yarn
 
 #### パッケージ
 
-yarn add ejs mariadb express sequelize sequelize-cli
+yarn add ejs mariadb express sequelize sequelize-cli typescript
 
 #### express 簡単に Web サーバーを作成し、ルーティング、ミドルウェア、テンプレートエンジンなどの機能を追加することができる
 

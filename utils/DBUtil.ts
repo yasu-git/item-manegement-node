@@ -11,12 +11,16 @@ const sequelize = new Sequelize(envConfig.database, envConfig.username, envConfi
 	logging: false, // ログを表示したくない場合は、falseに設定します
 });
 
-sequelize
-	.authenticate()
-	.then(() => {
+// 非同期処理をasync/awaitで実行します
+async function connectToDatabase() {
+	try {
+		// データベースに接続します
+		await sequelize.authenticate();
 		console.log('MariaDBに正常に接続されました。');
-	})
-	.catch((error:any) => {
-		console.error('MariaDBへ接続中にエラーが発生しました：', error);
-	});
+	} catch (error) {
+		console.error('MariaDBへの接続中にエラーが発生しました:', error);
+	}
+}
 
+// connectToDatabase関数を呼び出してデータベースに接続します
+connectToDatabase();
